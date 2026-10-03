@@ -286,7 +286,7 @@ def run_preprocessing(data):
 The behaviour of the `run_preprocessing` function depends on the values that it retrieves from an external source over which you have no control. How would you test this function?
 
 > [!IMPORTANT]
-> Remember the first piece of advice [given above](#general-advice-for-code-organisation) - _strive to write functions which are small, simple, self-contained, and without side-effects_. This code is **not** self-contained. Try to avoid writing this sort of code - a better design would be to pass all required input parameters as arguments, and push the responsibility of downloading the parameters out to the calling code.
+> Remember the first piece of advice given above - _strive to write functions which are small, simple, self-contained, and without side-effects_. This code is **not** self-contained. Try to avoid writing this sort of code - a better design would be to pass all required input parameters as arguments, and push the responsibility of downloading the parameters out to the calling code.
 
 
 If you are coding in Python, you're in luck - the built-in [`unittest.mock`](https://docs.python.org/3/library/unittest.mock.html) library makes testing this code easy:
@@ -441,7 +441,7 @@ We are just going to create a single workflow which runs our tests whenever new 
 
 2. Open a terminal, change into your `my_ols` directory, and run the following commands (replace `<username>` with your GitHub username):
    ```bash
-    git remote add origin https://github.kcl.ac.uk/<username>/my_ols.git
+    git remote add origin https://github.com/<username>/my_ols.git
     git branch -M main
     git push -u origin main
    ```
@@ -486,7 +486,7 @@ on:
     branches: main
 ```
 
-The next section defines our jobs - in this example, we just have a single job named `test`. GitHub Actions uses virtual machines (VMs) instead of Docker images, so here we have specified `ubuntu-latest` (it is also possible to run jobs on windows and macOS):
+The next section defines our jobs - in this example, we just have a single job named `test`. GitHub Actions uses virtual machines (VMs) instead of Docker images, so here we have specified `ubuntu-latest` (it is also possible to run jobs on Windows and MacOS):
 ```yaml
 jobs:
   test:
@@ -509,7 +509,7 @@ Each job contains a list of `steps` - GitHub will execute each step in sequence:
        python-version: "3.14"
    ```
 
-3. The next two steps install our package and run the tests, in the same way that we used in our GitLab CI / CD configuration:
+3. The next two steps install our package and run the tests:
    ```yaml
    - name: Install package and dependencies
      run: pip install ".[test]"
@@ -814,28 +814,28 @@ the linked issue can automatically close when the pull request is merged into th
 ## Good Practices
 
 > [!TIP]
-> Keep Issues Focused. An issue should describe one reasonably coherent piece of work. If an issue becomes very large, consider dividing it into sub-issues.
+> Keep issues focused. An issue should describe one reasonably coherent piece of work. If an issue becomes very large, consider dividing it into sub-issues.
 
 >[!TIP]
->Use Descriptive Titles. Prefer: `File opening crashes with relative paths.` instead of: `File bug.` The title should make the problem understandable when someone views a list of issues.
+>Use descriptive titles. Prefer: `File opening crashes with relative paths.` instead of: `File bug.` The title should make the problem understandable when someone views a list of issues.
 
 >[!TIP]
-> Define Completion Criteria. Use task lists or acceptance criteria to describe what must be completed before the issue can be considered resolved.
+> Define completion criteria. Use task lists or acceptance criteria to describe what must be completed before the issue can be considered resolved.
 
 >[!TIP]
-> Include Issue Numbers in Branch Names. Prefer: `42-file-opening` over an ambiguous branch name such as: `new-branch.` This makes the relationship between the branch and the tracked work immediately visible.
+> Include issue numbers in branch names. Prefer: `42-file-opening` over an ambiguous branch name such as: `new-branch.` This makes the relationship between the branch and the tracked work immediately visible.
 
 >[!TIP]
-> Keep Unrelated Changes Separate. If you discover an unrelated bug while implementing issue `#42`, consider creating another issue and branch instead of adding the unrelated change to the existing branch. This keeps pull requests focused and easier to review.
+> Keep unrelated changes separate. If you discover an unrelated bug while implementing issue `#42`, consider creating another issue and branch instead of adding the unrelated change to the existing branch. This keeps pull requests focused and easier to review.
 
 >[!TIP]
-> Link Development Work to Issues. Use GitHub's **Development** section to associate branches and pull requests with their corresponding issues.. This allows collaborators to move easily between: `Issue ↔ Branch ↔ Pull Request.`
+> Link development work to issues. Use GitHub's **Development** section to associate branches and pull requests with their corresponding issues. This allows collaborators to move easily between: `Issue ↔ Branch ↔ Pull Request.`
 
 >[!TIP]
-> Use Pull Requests for Review. When working in a team, pull requests provide a useful review point before changes reach the default branch. They also preserve discussions about the implementation for future reference.
+> Use Pull Requests for review. When working in a team, pull requests provide a useful review point before changes reach the default branch. They also preserve discussions about the implementation for future reference.
 
 >[!TIP]
-> Use Closing Keywords Carefully. Use: `Fixes #42` when the pull request completely resolves issue `#42`.
+> Use closing keywords carefully. Use: `Fixes #42` when the pull request completely resolves issue `#42`.
 
 ## Thanks
 
