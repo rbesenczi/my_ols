@@ -836,3 +836,8 @@ the linked issue can automatically close when the pull request is merged into th
 
 >[!TIP]
 > Use Closing Keywords Carefully. Use: `Fixes #42` when the pull request completely resolves issue `#42`.
+
+## Thanks
+
+> [!IMPORTANT]
+> Special thanks to Paul McCarthy (OxCIN, University of Oxford) for the codes.
