@@ -8,7 +8,7 @@ import requests
 import numpy as np
 
 
-PARAMETERS_URL = ''
+PARAMETERS_URL = 'https://raw.githubusercontent.com/rbesenczi/my_ols/refs/heads/main/my_ols/parameters.txt'
 """Download URL for preprocessing parameters. """
 
 

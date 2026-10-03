@@ -363,7 +363,7 @@ We are now going to walk through how to set up automated testing on a simple Pyt
 ### Set up a local development environment
 
 > [!WARNING]
-> You will need a KCL GitHub account to complete the following sections, and will need to have SSH key-based authentication configured.  Follow [these instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) if you haven't already done so.
+> You will need a GitHub account to complete the following sections, and will need to have SSH key-based authentication configured. Follow [these instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) if you haven't already done so.
 
 First of all let's set up your local machine so that you can hack on the code and run the tests locally.
 
@@ -387,11 +387,11 @@ Now let's get a copy of the code:
 
 1. Clone the GitHub repository so you have a local copy:
    ```bash
-   git clone https://github.kcl.ac.uk/k2258483/my_ols.git
+   git clone https://github.com/rbesenczi/my_ols.git
    ```
    Or, if you have set up SSH key-based authentication (meaning you won't have to enter your username/password):
    ```bash
-   git clone git@github.kcl.ac.uk:<your_k_number>/my_ols.git
+   git clone git@github.com:rbesenczi/my_ols.git
    ```
 
 2. Change into the `my_ols` directory, and create a Python environment with the project dependencies. If you are using `uv`, run:
@@ -439,13 +439,12 @@ We are just going to create a single workflow which runs our tests whenever new 
 
 1. Log into your GitHub account, and create a new empty repository called `my_ols`:
 
-2. Open a terminal, change into your `my_ols` directory, and run the following commands (replace `<your_k_number>` with your k number):
+2. Open a terminal, change into your `my_ols` directory, and run the following commands (replace `<username>` with your GitHub username):
    ```bash
-    git remote add origin https://github.kcl.ac.uk/<your_k_number>/my_ols.git
+    git remote add origin https://github.kcl.ac.uk/<username>/my_ols.git
     git branch -M main
     git push -u origin main
    ```
-   Now your local repository is linked to both GitLab and GitHub (remote names `gitlab` and `github` respectively).
 
 3. Copy and paste the following commands - this will create a new file `.github/worfklows/test.yaml`, containing the GitHub actions configuration:
    ```bash
@@ -477,7 +476,7 @@ We are just going to create a single workflow which runs our tests whenever new 
 
 4. Commit and push these changes to your repository.
 
-5. Open `https://github.kcl.ac.uk/<your_k_number>/my_ols/actions` in a web browser (replace `<your_k_number>` with your k number), and click through to watch your tests run!
+5. Open `https://github.com/<username>/my_ols/actions` in a web browser (replace `<username>` with your username), and click through to watch your tests run!
 
 
 Let's look at our GitHub Actions configuration in more detail. The first section tells GitHub when our workflow should be executed - whenever commits are pushed to the `main` branch:
