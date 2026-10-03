@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+
+[project]
+name            = "my_ols"
+version         = "1.0.0"
+license         = { text="Creative Commons" }
+dependencies    = ["numpy", "requests"]
+requires-python = ">=3.12"
+
+[project.optional-dependencies]
+test = [
+  "pytest",
+  "coverage",
+  "pytest-cov"
+]
+
+
+[project.scripts]
+my_ols     = "my_ols.main:main"
+my_preproc = "my_ols.preprocess:main"
+
+
+[tool.pytest.ini_options]
+addopts    = "-v --cov"
+testpaths  = [
+  "my_ols/tests"
+]
+
+[tool.coverage.run]
+include = ["my_ols/*"]
+omit    = ["my_ols/tests/*"]
