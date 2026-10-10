@@ -356,7 +356,7 @@ The way that CI / CD works is roughly:
 
 If you are using GitHub, then the CI infrastructure is also provided by GitHub (known as _GitHub Actions_). But you can set up an external CI provider if you wish, such as [Travis](https://www.travis-ci.com/), [Circle CI](https://circleci.com/) or [Microsoft Azure](https://azure.microsoft.com/) (there are many to choose from, some free, some paid).
 
-We are now going to walk through how to set up automated testing on a simple Python project on GitHub.  We are going to use the `Research code test` project (https://github.kcl.ac.uk/k2258483/my_ols), but hopefully you will learn enough to be able to set up your own project later on.
+We are now going to walk through how to set up automated testing on a simple Python project on GitHub.  We are going to use the `my_ols` project (https://github.com/rbesenczi/my_ols/), but hopefully you will learn enough to be able to set up your own project later on.
 
 <hr>
 
@@ -520,6 +520,8 @@ Each job contains a list of `steps` - GitHub will execute each step in sequence:
 
 > [!NOTE]
 > Workflow syntax for GitHub Actions: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
+
+And that's it! Now you have an automated testing environment for your project.
 
 # Towards a more robust software process - Issue Tracking with GitHub Issues
 
